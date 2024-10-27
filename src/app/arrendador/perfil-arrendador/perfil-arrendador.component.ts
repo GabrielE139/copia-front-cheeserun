@@ -1,0 +1,14 @@
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'app-perfil-arrendador',
+  standalone: true,
+  imports: [CommonModule, RouterLink],
+  templateUrl: './perfil-arrendador.component.html',
+  styleUrl: './perfil-arrendador.component.css'
+})
+export class PerfilArrendadorComponent {
+
+}
