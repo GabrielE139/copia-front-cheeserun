@@ -1,5 +1,5 @@
 # Etapa 1: Compilar la aplicación Angular
-FROM node:16 AS build
+FROM node:18 AS build
 
 # Crear el directorio de trabajo
 WORKDIR /app
