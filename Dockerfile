@@ -12,11 +12,11 @@ COPY . .
 RUN npm run build --prod
 
 # Etapa 2: Servir con Nginx
-FROM nginx:1.23.1-alpine
+FROM nginx:alpine
 
 # Copiar la aplicación compilada
 COPY --from=build /app/dist/ng-tailwind /usr/share/nginx/html
 
-EXPOSE 82
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 
