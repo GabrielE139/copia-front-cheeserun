@@ -15,7 +15,8 @@ RUN npm run build --prod
 FROM nginx:alpine
 
 # Copiar la aplicación compilada
-COPY --from=build /app/dist/ng-tailwind /usr/share/nginx/html
+COPY --from=build /app/dist/ng-tailwind/browser /usr/share/nginx/html
+COPY --from=build /app/dist/ng-tailwind/3rdpartylicenses.txt /usr/share/nginx/html
 
 
 COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
