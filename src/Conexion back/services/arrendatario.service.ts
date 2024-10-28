@@ -7,9 +7,13 @@ import { Arrendatario } from '../models/arrendatario.model';
   providedIn: 'root'
 })
 export class ArrendatarioService {
-  private apiUrl = 'http://localhost:8080/arrendatario';
+  private apiUrl = 'http://localhost:8080/api/arrendatario';
 
   constructor(private http: HttpClient) {}
+
+  obtenerArrendatario(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/arrendatario/${id}`);
+  }
 
   crearArrendatario(arrendatarioData: Arrendatario): Observable<any> {
     return this.http.post(`${this.apiUrl}/crearArrendatario`, arrendatarioData);

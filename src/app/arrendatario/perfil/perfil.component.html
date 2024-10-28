@@ -1,1 +1,64 @@
-<p>perfil works!</p>
+<div class="bg-red-50 p-16 rounded-lg shadow-xl max-w-7xl mx-auto flex flex-col items-center space-y-10">
+    <!-- Contenedor principal -->
+    <div class="w-full flex items-start">
+        <!-- Imagen de perfil y botón debajo -->
+        <div class="w-1/4 flex flex-col items-center">
+            <img class="h-40 w-80 rounded border-2 border-gray-300" src="https://via.placeholder.com/400x200" alt="profile image">
+            <button class="mt-6 bg-red-500 text-white text-sm font-medium py-3 px-6 w-48 rounded hover:bg-red-600 transition-colors">
+                CAMBIA IMAGEN
+            </button>
+        </div>
+
+        <!-- Información del perfil -->
+        <div class="w-3/4 pl-16">
+            <div class="text-gray-700 text-lg space-y-4">
+                <p><a href="#" class="text-blue-500 hover:underline">-VER CALIFICACIONES-</a></p>
+                <p><a href="#" class="text-blue-500 hover:underline">-VER HISTORIAL ARRENDAMIENTOS-</a></p>
+                <p><strong>Nombre:</strong> [Nombre]</p>
+                <p><strong>Fecha de registro:</strong> [Fecha]</p>
+                <p><strong>Usuario:</strong> [Usuario]</p>
+                <p><strong>Contraseña:</strong> [Contraseña]</p>
+                <p><strong>Medios de pago:</strong> [Medios]</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones en la parte inferior -->
+    <div class="w-full flex justify-between mt-10">
+        <button onclick= openModal() class="bg-red-500 text-white text-lg font-medium py-1 px-8 w-43 rounded hover:bg-red-600 transition-colors">
+            ELIMINAR CUENTA
+        </button>
+        <button routerLink="/arrendador" class="bg-green-500 text-white text-lg font-medium py-1 px-8 w-40 rounded hover:bg-green-600 transition-colors">
+            GUARDAR CAMBIOS
+        </button>
+    </div>
+</div>
+
+<!-- Modal de Confirmación -->
+<div id="confirmationModal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg p-8 shadow-lg max-w-sm w-full text-center space-y-6">
+        <h2 class="text-xl font-semibold text-gray-700">¿Estás seguro de que deseas eliminar tu cuenta?</h2>
+        <div class="flex justify-center space-x-4">
+            <button onclick="deleteAccount()" class="bg-red-500 text-white font-medium py-2 px-4 rounded hover:bg-red-600 transition-colors">Sí</button>
+            <button onclick="closeModal()" class="bg-gray-300 text-gray-700 font-medium py-2 px-4 rounded hover:bg-gray-400 transition-colors">No</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+        console.log("Modal abierto"); // Esto debería aparecer en la consola
+        document.getElementById('confirmationModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+        document.getElementById('confirmationModal').classList.add('hidden');
+    }
+
+    function deleteAccount() {
+        // Aquí puedes agregar la lógica para eliminar la cuenta
+
+        alert("Cuenta eliminada");
+        closeModal();
+    } 
+</script>

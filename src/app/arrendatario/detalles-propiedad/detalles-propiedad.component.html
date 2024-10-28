@@ -12,24 +12,41 @@
     <!-- Contenedor de la propiedad -->
     <div class="flex flex-col md:flex-row">
         <!-- Imagen principal de la propiedad -->
-        <img [src]="propiedad.imagenes[imagenActual]" alt="Imagen de la propiedad" class="w-full md:w-1/3 h-auto object-cover rounded-l-lg">
+        <img [src]="propiedad.imagenes[imagenActual]" alt="Imagen de la propiedad" class="w-full md:w-1/2 h-auto object-cover rounded-l-lg">
 
         <!-- Información de la propiedad -->
         <div class="flex-1 ml-10">
             <h3 class="text-Encabezados text-2xl font-bold text-center">{{ propiedadPedida?.nombre }}</h3>
-            <p class="text-gray-600 mt-5 mb-5 text-left">{{ propiedad.descripcion }}</p>
+            <p class="text-gray-600 mt-5 mb-5 text-left">{{ propiedadPedida?.propiedad }}</p>
             <p class="text-gray-600 text-left"><b>Ubicada en:</b> {{ propiedadPedida?.ubicacion }}</p>
             <p class="text-green-600 font-bold text-left">Precio por noche: ${{ propiedadPedida?.precioXnoche }}</p>
-
-            <ul class="list-disc list-inside text-gray-600 mt-2 ml-6 text-left">
+            <ul class="text-left">
                 <li><b>Área:</b> {{ propiedadPedida?.area }} m²</li>
                 <li><b>Capacidad:</b> {{ propiedadPedida?.capacidad }} personas</li>
                 <li><b>Camas:</b> {{ propiedadPedida?.camas }}</li>
-                <li><b>Cuartos:</b> {{ propiedadPedida?.cuartos ? 'Sí' : 'No' }}</li>
-                <li><b>Parqueadero:</b> {{ propiedadPedida?.parqueadero ? 'Sí' : 'No' }}</li>
-                <li><b>Piscina:</b> {{ propiedadPedida?.piscina ? 'Sí' : 'No' }}</li>
-                <li><b>Disponible:</b> {{ propiedadPedida?.disponible ? 'Sí' : 'No' }}</li>
+                <li><b>Cuartos:</b> {{ propiedadPedida?.cuartos }}</li>
+                <li><b>Mascotas permitidas:</b> {{ propiedadPedida?.mascotas ? 'Sí' : 'No' }}</li>
             </ul>
+            <div class="mt-4">
+                <!-- Encabezado desplegable -->
+                <details class="bg-FondoCrema rounded-2xl shadow-md p-4">
+                <summary class="cursor-pointer text-blue-600 font-semibold">
+                {{ isExpanded ? 'Ocultar detalles' : 'Ver comodidades y equipamientos' }}
+                </summary>
+            
+                <!-- Lista de propiedades desplegable -->
+                <ul class="list-disc list-inside bg-FondoCrema text-gray-600 mt-2 ml-6 text-left">
+                    <li><b>Parqueadero:</b> {{ propiedadPedida?.parqueadero ? 'Sí' : 'No' }}</li>
+                    <li><b>Piscina:</b> {{ propiedadPedida?.piscina ? 'Sí' : 'No' }}</li>
+                    <li><b>Gimnacio:</b> {{ propiedadPedida?.gimnasios ? 'Sí' : 'No' }}</li>
+                    <li><b>Zona de juegos:</b> {{ propiedadPedida?.zonaJuegos ? 'Sí' : 'No' }}</li>
+                    <li><b>Zona de lavandería:</b> {{ propiedadPedida?.lavanderia ? 'Sí' : 'No' }}</li>                    <li><b>Servicio de alimentación:</b> {{ propiedadPedida?.piscina ? 'Sí' : 'No' }}</li>
+                    <li><b>Wifi:</b> {{ propiedadPedida?.wifi ? 'Sí' : 'No' }}</li>
+
+                </ul>
+                </details>
+            </div>
+
             
             <p class="text-gray-600 mt-2 text-left"><b>Arrendador:</b> {{ propiedad.arrendadorNombre }}</p>
         </div>

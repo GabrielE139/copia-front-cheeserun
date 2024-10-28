@@ -13,5 +13,17 @@ export interface Propiedad {
     status:number;
     arrendadorId:number;
     calificaciones:[];
-    solicitudes:[];  }
+    solicitudes:[];  
+
+    calificacionPromedio: number,
+    lavanderia: boolean,
+    wifi: boolean,
+    mascotas: boolean,
+    gimnasios: boolean,
+    zonaJuegos: boolean,
+    alimentacion: boolean,
+    propiedad: string,
+    imagenes: [string]
+
+}
 

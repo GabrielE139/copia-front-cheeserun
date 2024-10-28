@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { BotonVerticalComponent } from '../boton-vertical/boton-vertical.component';
+
 
 @Component({
   selector: 'app-contenido',
   standalone: true,
-  imports: [RouterOutlet,BotonVerticalComponent],
+  imports: [RouterOutlet],
   templateUrl: './contenido.component.html',
   styleUrl: './contenido.component.css'
 })

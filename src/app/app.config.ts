@@ -1,5 +1,5 @@
-import { HttpClientModule } from '@angular/common/http'; // Importar HttpClientModule
-import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 
@@ -10,6 +10,6 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(),
-    importProvidersFrom(HttpClientModule),  // Agregar HttpClientModule a los providers
+    provideHttpClient(),  // Habilitar HttpClient sin withFetch
   ]
 };

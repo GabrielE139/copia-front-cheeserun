@@ -13,6 +13,7 @@ import { AlquilerComponent } from '../alquiler/alquiler.component';
 })
 
 export class DetallesPropiedadComponentArrendatario implements OnInit {
+  isExpanded: boolean = false; // Inicialmente contraído
   calificacionPromedio: number = 5;
   propiedad: any = {
     nombre: 'Casa de Playa',
@@ -51,7 +52,7 @@ export class DetallesPropiedadComponentArrendatario implements OnInit {
 
   abrirFormularioAlquiler() {
     this.mostrarFormularioAlquiler = true;
-    console.log("Se trató de abrir el formulario de alquiler")
+   // console.log("Se trató de abrir el formulario de alquiler")
   }
 
   cerrarFormularioAlquiler() {

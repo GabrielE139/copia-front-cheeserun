@@ -17,6 +17,11 @@ export class BarraBusquedaComponentArrendatario {
   mostrarDisponibles: boolean = true;
   parqueadero: boolean = false;
   piscina: boolean = false;
+  gimnasio: boolean = false;
+  wifi: boolean = false;
+  zonaJuegos: boolean = false;
+  lavanderia: boolean = false;
+  alimentacion: boolean = false;
 
   // Emitir evento con todos los filtros
  // @Output() filtroAplicado = new EventEmitter<{ capacidad?: number, disponibles?: boolean, parqueadero?: boolean, piscina?: boolean }>();
@@ -31,7 +36,13 @@ export class BarraBusquedaComponentArrendatario {
       capacidad: this.capacidad,
       disponibles: this.mostrarDisponibles,
       parqueadero: this.parqueadero,
-      piscina: this.piscina
+      piscina: this.piscina,
+      gimnasios: this.gimnasio,
+      wifi: this.wifi,
+      zonaJuegos: this.zonaJuegos,
+      lavanderia: this.lavanderia,
+      alimentacion: this.alimentacion,
+      mascotas: (this.mascotas > 0)
     });
     this.propiedadService.ocultarDetalles()
   }
