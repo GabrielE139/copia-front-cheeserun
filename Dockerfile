@@ -17,6 +17,8 @@ FROM nginx:alpine
 # Copiar la aplicación compilada
 COPY --from=build /app/dist/ng-tailwind /usr/share/nginx/html
 
+COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
+
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 
