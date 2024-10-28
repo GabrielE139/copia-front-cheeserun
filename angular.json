@@ -15,16 +15,15 @@
           "options": {
             "outputPath": "dist/ng-tailwind",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
-                "glob": "**/*",
-                "input": "public",
-                "output": "./"
+                "glob": "*/",
+                "input": "public"
               }
             ],
             "styles": [
@@ -81,9 +80,8 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               {
-                "glob": "**/*",
-                "input": "public",
-                "output": "./"
+                "glob": "*/",
+                "input": "public"
               }
             ],
             "styles": [
