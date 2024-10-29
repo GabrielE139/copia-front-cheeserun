@@ -23,13 +23,13 @@ export const routes: Routes = [
     { path: 'arrendatario', component: InicioComponentArrendatario },
     { path: 'arrendador', component: InicioComponentArrendador },
     //Arrendatario 
-    { path: 'perfil-arrendatario' , component: PerfilComponent},
-    { path: 'lista-deseos', component: ListaDeseosComponent},
-    { path: 'arrendamientos-programados', component: ArrendamientosProgramadosComponent},
-    { path: 'historial-arrendatario', component: HistorialArrendatarioComponent},
+    { path: 'perfil-arrendatario', component: PerfilComponent },
+    { path: 'lista-deseos', component: ListaDeseosComponent },
+    { path: 'arrendamientos-programados', component: ArrendamientosProgramadosComponent },
+    { path: 'historial-arrendatario', component: HistorialArrendatarioComponent },
     //arrendador
-    { path: 'perfil-arrendador' , component: PerfilArrendadorComponent},
-    { path: 'historial-arrendador', component: HistorialArrendadorComponent},
-    { path: 'arrendamientos-actuales', component: ArrendamientosActualesComponent},
+    { path: 'perfil-arrendador', component: PerfilArrendadorComponent },
+    { path: 'historial-arrendador', component: HistorialArrendadorComponent },
+    { path: 'arrendamientos-actuales', component: ArrendamientosActualesComponent },
     { path: '**', redirectTo: '' },// Redirige a la página principal si la ruta no se encuentra
 ];
