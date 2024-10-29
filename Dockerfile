@@ -16,7 +16,7 @@ FROM nginx:alpine
 
 # Copiar la aplicación compilada
 COPY --from=build /app/dist/CheeseRUN/browser /usr/share/nginx/html
-COPY --from=build /app/dist/CheeseRUN/3rdpartylicenses.txt /usr/share/nginx/html
+
 
 COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
 
